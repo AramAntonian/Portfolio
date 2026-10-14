@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* Brand: purple from your CV, as a full shade scale (Refactoring UI: define shades up front) */
+  --color-brand-50: #f6f1fb;
+  --color-brand-100: #ece1f7;
+  --color-brand-200: #d9c3ef;
+  --color-brand-300: #c09ae3;
+  --color-brand-400: #a46fd3;
+  --color-brand-500: #8a4fc0;
+  --color-brand-600: #7544a8;
+  --color-brand-700: #5f3989;
+  --color-brand-800: #4d2f6f;
+  --color-brand-900: #3a2354;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-blob: blob 14s ease-in-out infinite;
+  --animate-gradient: gradient 8s ease infinite;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+  }
+  @keyframes blob {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(30px, -40px) scale(1.1); }
+    66% { transform: translate(-25px, 25px) scale(0.95); }
+  }
+  @keyframes gradient {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #f8fafc; /* slate-50: off-white feels softer than pure white */
+  color: #475569; /* slate-600: body text is not pure black */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
